@@ -1,0 +1,13 @@
+{
+  "name": "voxmatrix-political-intelligence",
+  "version": "1.0.0",
+  "description": "Advanced political intelligence platform providing real-time sentiment analysis and election forecasting.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

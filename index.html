@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoxMatrix — Political Intelligence Platform</title>
+    <meta name="description" content="Advanced political intelligence platform providing real-time sentiment analysis and election forecasting.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <header class="glass-panel header">
+        <div class="header-top">
+            <div class="logo">Vox<span>Matrix</span></div>
+            <div class="controls">
+                <div class="year-timeline">
+                    <button class="year-btn active" data-year="2024">2024</button>
+                    <button class="year-btn" data-year="2025">2025</button>
+                    <button class="year-btn" data-year="2026">2026</button>
+                </div>
+                <select id="constituency-selector" class="glass-select">
+                    <option value="delhi-new">New Delhi</option>
+                    <option value="lucknow">Lucknow</option>
+                    <option value="mumbai-north">Mumbai North</option>
+                    <option value="hyderabad">Hyderabad</option>
+                    <option value="bangalore-south">Bangalore South</option>
+                    <option value="chennai-central">Chennai Central</option>
+                </select>
+                <div class="accuracy-meter" data-tip="Prediction Accuracy based on current trend models">
+                    <span class="m-label">Accuracy Score</span>
+                    <div class="accuracy-glow">
+                        <span id="global-accuracy" class="mono">94.2%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sentiment-ticker">
+            <div class="ticker-content" id="ticker-content">
+                <!-- Ticker items will be injected by JS -->
+            </div>
+        </div>
+    </header>
+
+    <main class="content-grid">
+        <!-- Candidate Cards -->
+        <section class="candidate-container" id="candidate-cards">
+            <!-- Cards injected by JS -->
+        </section>
+
+        <section class="secondary-grid">
+            <!-- Radar Chart Overlay/Center -->
+            <div class="radar-container glass-panel">
+                <h3 class="panel-title">Cross-Factor Matrix Comparison</h3>
+                <div class="radar-wrapper">
+                    <svg id="radar-chart" viewBox="0 0 400 400"></svg>
+                </div>
+                <div class="radar-legend" id="radar-legend"></div>
+            </div>
+
+            <!-- Sentiment Analysis Trend -->
+            <div class="sentiment-trend-container glass-panel">
+                <h3 class="panel-title">7-Day Digital Sentiment Trend</h3>
+                <div class="chart-wrapper">
+                    <svg id="sentiment-trend-chart" viewBox="0 0 400 200"></svg>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <span class="m-label">Avg Global Sentiment</span>
+                        <span class="m-value neon-purple">68.2%</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="m-label">Volatility Index</span>
+                        <span class="m-value" style="color: var(--rose)">High</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insights Summary -->
+        <section class="insights-panel glass-panel">
+            <h3 class="panel-title">Intelligence Briefing</h3>
+            <div class="brief-grid" id="brief-grid">
+                <!-- Briefing points injected by JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Detailed Insights -->
+    <div id="insight-modal" class="modal-overlay">
+        <div class="modal-content glass-panel">
+            <button class="close-modal">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Custom Tooltip -->
+    <div id="tooltip" class="custom-tooltip"></div>
+
+    <footer class="glass-panel forecast-bar">
+        <div class="forecast-content">
+            <div class="vote-share-container">
+                <div class="label-row">
+                    <span>Vote Share Projection</span>
+                    <span id="confidence-score" class="mono">Confidence: 94.2%</span>
+                </div>
+                <div class="stacked-bar" id="vote-share-bar">
+                    <!-- Segments injected by JS -->
+                </div>
+            </div>
+            <div class="scenario-toggles">
+                <button class="toggle-btn active" data-scenario="base">Base Case</button>
+                <button class="toggle-btn" data-scenario="high-turnout">High Turnout</button>
+                <button class="toggle-btn" data-scenario="swing">Swing Voter +5%</button>
+            </div>
+            <div class="timestamp">
+                Last updated: <span id="last-updated" class="mono">2026-04-20 13:52:21</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
