@@ -102,8 +102,8 @@ Object.keys(appData).forEach(year => {
             appData[year].constituencies[constituency].candidates = baseData.candidates.map(c => ({
                 ...c,
                 id: `${year}_${c.id}`,
-                winProb: Math.max(10, Math.min(90, c.winProb + (Math.random() * 10 - 5))),
-                factors: { ...c.factors, pastWork: Math.max(10, Math.min(95, c.factors.pastWork + (Math.random() * 8 - 4))) }
+                winProb: Math.round(Math.max(10, Math.min(90, c.winProb + (Math.random() * 10 - 5)))),
+                factors: { ...c.factors, pastWork: Math.round(Math.max(10, Math.min(95, c.factors.pastWork + (Math.random() * 8 - 4)))) }
             }));
             appData[year].constituencies[constituency].briefs = [{ tag: `${year} PROJECTION`, text: `Simulated data shows evolving trends in ${constituency}.` }];
         }
